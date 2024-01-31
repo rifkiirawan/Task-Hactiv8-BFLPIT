@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- <link rel="stylesheet" href=""> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    /* header {
+    background-color: #fff;
+    text-align: right;
+    color: white;
+    box-shadow: 0px 0px 30px #777;
+    } */
+</style>
+<body>
+
+<section>
+    <div class="container">
+        <header class="d-flex py-3  justify-content-end">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">Inventory</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div style="background-color: #f7f8fc;">
+        <div style="padding: 40px;">
+            <div class="container shadow-sm py-4" style="background-color: #FFF;">
+                <div class="row align-items-center">
+                    <div class="col-sm-2 d-flex justify-content-center">
+                        <img src="images/test.jpg" alt="beda direktori" class="rounded-circle img-fluid ms-3 p-3">
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 id="Nama">Rifki Aulia Irawan</h4>
+                        <p id="Role">Front End Designer</p>
+                        <p>
+                            <button class="btn btn-sm btn-primary" onclick="showHide()">Edit</button>
+                            <button class="btn btn-sm btn-outline-success">Resume</button>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div><b>Availability :</b></div>
+                        <div><b>Usia :</b></div>
+                        <div><b>Lokasi :</b></div>
+                        <div><b>Pengalaman :</b></div>
+                        <div><b>Email :</b></div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div id="Availability">Full Time</div>
+                        <div id="Usia">19</div>
+                        <div id="Lokasi">Jakarta</div>
+                        <div id="Pengalaman">2</div>
+                        <div id="Email">email@email.com</div>
+                    </div>
+                </div>
+            </div>
+            <div id="form" class="container" style="background-color: #FFF; margin-top: 20px; visibility: hidden;">
+                <form action="">
+                    <label for="nama"><b>Nama</b></label><br>
+                    <input type="text" class="form-control" name="nama" id="inputNama"><br>
+                    <label for="role"><b>Role</b></label><br>
+                    <input type="text" class="form-control" name="role" id="inputRole"></input><br>
+                    <label for="avail"><b>Availability</b></label><br>
+                    <input type="text" class="form-control" name="avail" id="inputAvail"><br>
+                    <label for="usia"><b>Usia</b></label><br>
+                    <input type="number" class="form-control" name="usia" id="inputUsia"><br>
+                    <label for="lokasi"><b>Lokasi</b></label><br>
+                    <input type="text" class="form-control" name="lokasi" id="inputLokasi"><br>
+                    <label for="exp"><b>Years Experience</b></label><br>
+                    <input type="number" class="form-control" name="exp" id="inputPengalaman"><br>
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="email " class="form-control" name="email" id="inputEmail"><br>
+                </form>
+                <div class="d-grid">
+                    <button class="btn btn-lg btn-success" style="margin-top: 10px;" onclick="editform()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showHide(){
+        var targetDiv = document.getElementById("form");
+        if (targetDiv.style.visibility === "hidden"){
+            targetDiv.style.visibility = "visible";
+        }else{
+            targetDiv.style.visibility = "hidden";
+        }
+    }
+    function editform(){
+        var nama = document.getElementById("Nama");
+        var role = document.getElementById("Role");
+        var availability = document.getElementById("Availability");
+        var usia = document.getElementById("Usia");
+        var lokasi = document.getElementById("Lokasi");
+        var pengalaman = document.getElementById("Pengalaman");
+        var email = document.getElementById("Email");
+
+
+        var FormNama = document.getElementById("inputNama").value
+        var FormRole = document.getElementById("inputRole").value
+        var FormAvail = document.getElementById("inputAvail").value
+        var FormUsia = document.getElementById("inputUsia").value
+        var FormLokasi = document.getElementById("inputLokasi").value
+        var FormPengalaman = document.getElementById("inputPengalaman").value
+        var FormEmail = document.getElementById("inputEmail").value
+        
+        if(FormNama=='' || FormRole=='' || FormAvail=='' || FormUsia=='' || FormLokasi=='' || FormLokasi=='' || FormPengalaman=='' || FormEmail==''){
+            alert("Semua Kolom Tidak Boleh Kosong!");
+        }else{
+            nama.innerHTML = FormNama
+            role.innerHTML = FormRole
+            availability.innerHTML = FormAvail
+            usia.innerHTML = FormUsia
+            lokasi.innerHTML = FormLokasi
+            pengalaman.innerHTML = FormPengalaman
+            email.innerHTML = FormEmail
+        }
+    }
+</script>
+</body>
+</html>
