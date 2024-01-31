@@ -13,3 +13,4 @@ function cetakSegitiga(a){
         console.log (space.repeat(a-i)+symbol);
     }
 }
+ 
